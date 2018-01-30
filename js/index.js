@@ -2,31 +2,44 @@
 // Initialisation des variables
 var container = document.getElementById("container");
 var blocImg = document.getElementById("container2");
-
-var img1 = document.getElementById("img1");
-var img2 = document.getElementById("img2");
-var img3 = document.getElementById("img3");
-var pixDeplacement = 280;
+var compteur = 0;
 
 var buttonLeft = document.getElementById("buttonLeft");
 var buttonRight = document.getElementById("buttonRight");
 
-var posBlocImgX = blocImg.offsetLeft;
-
-
-// Fonction click sur bouton gauche
-function clickLeft (){
-  posBlocImgX = blocImg.offsetLeft;
-  blocImg.style.left = posBlocImgX - pixDeplacement + "px";
+function move (direction){
+  var pos = blocImg.offsetLeft;
+  var dir;
+  if ((direction == "left") && (compteur != 0)){
+    dir = 280;
+    compteur--;
+    console.log(compteur);
+  }
+  if ((direction == "right") && (compteur != 2)){
+    dir = -280;
+    compteur++;
+    console.log(compteur);
+  }
+  blocImg.style.left = pos + dir + "px";
 }
 
-// Fonction click sur bouton droite
-function clickRight (){
-  posBlocImgX = blocImg.offsetLeft;
-  blocImg.style.left = posBlocImgX + pixDeplacement + "px";
-  }
+buttonLeft.addEventListener('click', function(){move("left");}, false);
+buttonRight.addEventListener('click', function(){move("right");}, false);
 
 
-buttonLeft.addEventListener('click', clickLeft);
-
-buttonRight.addEventListener('click', clickRight);
+// // Fonction click sur bouton gauche
+// function clickLeft (){
+//   posBlocImgX = blocImg.offsetLeft;
+//   blocImg.style.left = posBlocImgX + pixDeplacement + "px";
+// }
+//
+// // Fonction click sur bouton droite
+// function clickRight (){
+//   posBlocImgX = blocImg.offsetLeft;
+//   blocImg.style.left = posBlocImgX - pixDeplacement + "px";
+//   }
+//
+//
+// buttonLeft.addEventListener('click', clickLeft);
+//
+// buttonRight.addEventListener('click', clickRight);

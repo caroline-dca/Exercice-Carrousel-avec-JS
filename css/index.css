@@ -3,25 +3,28 @@
   padding: 0;
 }
 
+body {
+  background-color: rgb(52, 52, 45);
+}
+
 #container {
+  background-color: white;
   position: relative;
-  border: 1px solid green;
   margin: auto;
   margin-top: 250px;
   width: 270px;
   height: 300px;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 #container2 {
   position: absolute;
-  /* border: 1px solid ; */
   display: flex;
   justify-content: space-between;
-  /* margin: auto; */
   padding: 10px;
   width: 810px;
   height: 270px;
+  transition: 1s;
 }
 
 #container2 img{
@@ -30,14 +33,9 @@
 }
 
 #button {
-  /* border: 1px solid ; */
   display: flex;
   justify-content: space-between;
   padding: 10px;
   margin: auto;
   width: 70px;
-}
-
-#button p {
-font-size: 1.5em;
 }
